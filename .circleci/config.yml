@@ -13,8 +13,11 @@ jobs:
           keys:
             - dotnet-packages-v1-{{ checksum "circleci-demo-windows.csproj" }}
      - run:
-          name: "Running tests"
-          command: make test
+        name: Running X virtual framebuffer
+        command: Xvfb :99 -screen 0 1280x1024x24
+        background: true
+
+- run: make test
 
       - save_cache:
           paths:
