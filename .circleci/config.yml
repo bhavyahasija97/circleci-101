@@ -15,7 +15,7 @@ jobs:
             
       - run: 
           name: "creating mkdir"
-          mkdir -p /tmp/test-results
+          command: mkdir -p /tmp/test-results
 
 
       - save_cache:
