@@ -13,7 +13,7 @@ jobs:
           keys:
             - dotnet-packages-v1-{{ checksum "circleci-demo-windows.csproj" }}
      - run:
-          name: Running tests
+          name: "Running tests"
           command: make test
 
       - save_cache:
