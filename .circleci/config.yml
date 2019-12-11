@@ -12,8 +12,11 @@ jobs:
       - restore_cache:
           keys:
             - dotnet-packages-v1-{{ checksum "circleci-demo-windows.csproj" }}
+            
+      -run: make test      
       - run: |
            mkdir -p /tmp/test-results
+           make test
 
 
       - save_cache:
