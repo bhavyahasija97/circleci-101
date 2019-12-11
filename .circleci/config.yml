@@ -12,9 +12,10 @@ jobs:
       - restore_cache:
           keys:
             - dotnet-packages-v1-{{ checksum "circleci-demo-windows.csproj" }}
-      - run:
-          name: "Install project dependencies"
-          command: circleci-demo-windows.csproj
+     - run:
+          name: Running tests
+          command: make test
+
       - save_cache:
           paths:
             - C:\Users\circleci\.nuget\packages
